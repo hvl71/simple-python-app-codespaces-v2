@@ -1,2 +1,5 @@
-Flask==2.2.2
-
+Flask==3.0.3
+Werkzeug==3.0.2
+blinker==1.8.1
+click==8.1.7
+itsdangerous==2.2.0
