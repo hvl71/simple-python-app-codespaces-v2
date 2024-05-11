@@ -1,8 +1,6 @@
 # simple-python-app-codespaces-v2
 
-This repo is based on the simple-python-app-codespaces template. The idea is to extend the demo in simple-python-app-codespaces so the image that was hand-built in simple-python-app-codespaces gets built automatically
-via GitHub actions. For now we don't think about branches, test and pushing the image to a registry. I hope to add all these aspects in later demos so we end up with a modern CI/CD platform with preview enviornments 
-fully cloud-based. We will see..:-)
+This repo is based on the simple-python-app-codespaces template. The only difference between simple-python-app-codespaces-v2 and simple-python-app-codespaces is that this repo adds a wrapper script for local build (build.sh) and a wrapper script for local execution of app (basically just docker run via run.sh). Step 6 below talks about build design. Obviously that is opinionated, but nevertheless reflects an approach that I have had very good experience with over the years in misc. contexts.
 
 ### 1. Open source via Codespaces
 
@@ -41,7 +39,7 @@ source ./build.sh
 source ./run.sh
 ```
 
-### 8. Next steps
+### 6. Next steps
 
 Mature solution a bit. Setup a GitHub Action that uses the build.sh command to build. I like to write build logic in some common general purpose language and then just have a thin layer on the build server executing it.
 By using that approach other developers can easily build and debug localhost and it is trivial to shift from one build server technology to another. The opposite approach is a heavy implementation written in some 
